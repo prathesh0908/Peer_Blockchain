@@ -1,53 +1,84 @@
-# Peer_Blockchain
-# Decentralized Application (dApp) for Liquidity Pool and Token Swap
+# Peer Blockchain
 
-## Overview
-This project is a decentralized application (dApp) that allows users to interact with smart contracts deployed on an EVM-compatible blockchain network. The application features ERC20 token deployment, a liquidity pool smart contract, and a user-friendly frontend interface for liquidity management and token swapping.
+Peer Blockchain is a decentralized finance (DeFi) application that provides a simple and interactive interface for adding liquidity to a pool and swapping tokens. It leverages the Web3 technology to simulate and display blockchain transactions, enabling users to experiment with liquidity provisioning and token swapping without real transactions on the blockchain.
 
 ## Features
-### 1. **ERC20 Token Deployment**
-- Two unique ERC20 tokens have been deployed:
-  - **Token A**: [Description, e.g., Utility token]
-  - **Token B**: [Description, e.g., Governance token]
 
-### 2. **Liquidity Pool Smart Contract**
-A custom smart contract enables the following functionalities:
-- **Add Liquidity**: Users can deposit both tokens into the pool.
-- **Remove Liquidity**: Users can withdraw their contributed tokens proportionally.
-- **Token Swap**: Allows users to exchange one token for another within the pool at a dynamic exchange rate based on the pool's token reserves.
+- **Add Liquidity**: Allows users to add liquidity to a pool by selecting two tokens and specifying the amounts they want to add. The interface simulates the calculation of optimal liquidity amounts and provides a simulated pool share.
+  
+- **Swap Tokens**: Provides a token swap interface where users can input the amount of one token and swap it for another. The swap simulation includes slippage tolerance and calculates the minimum amount of output tokens based on the slippage.
 
-### 3. **Frontend Interface**
-The user-friendly interface provides:
-- Seamless interaction with the smart contracts.
-- Clear display of pool reserves, user balances, and token prices.
-- Easy-to-use forms for adding/removing liquidity and swapping tokens.
+- **Slippage Adjustment**: Users can adjust the slippage tolerance for swaps, which affects the minimum amount of tokens they will receive.
 
----
+- **Token Inputs**: Displays tokens in an intuitive input field with the current balance and allows users to easily select the tokens for liquidity provisioning or swapping.
 
-## Technology Stack
-### **Backend**
-- **Solidity**: For writing smart contracts.
-- **OpenZeppelin**: Utilized for ERC20 token implementation.
+## Tech Stack
 
-### **Frontend**
-- **React.js**: For building the frontend interface.
-- **Ethers.js**: For connecting and interacting with the blockchain network.
+- **React.js**: Frontend framework for building the user interface.
+- **Web3.js**: JavaScript library to interact with the Ethereum blockchain.
+- **Lucide Icons**: A set of open-source SVG icons used in the application.
+- **Tailwind CSS**: A utility-first CSS framework for styling the components.
 
-### **Blockchain**
-- **Ganache/Hardhat**: For local blockchain development and testing.
-- **Metamask**: For user authentication and wallet integration.
+## Components
 
----
+- **LiquidityInterface**: The main component for adding liquidity to a pool. It calculates optimal liquidity amounts based on user input and mock reserves.
+  
+- **SwapInterface**: The component for swapping tokens. It includes a slippage tolerance input and calculates the minimum amount of tokens to receive in the swap.
 
-## Installation and Setup
+- **TokenInput**: A reusable input component that displays token details, balance, and allows users to input amounts for the tokens.
 
-### 1. **Prerequisites**
-Ensure the following tools are installed:
-- [Node.js](https://nodejs.org/)
-- [Ganache](https://trufflesuite.com/ganache/)
-- [Metamask](https://metamask.io/)
+## Setup
 
-### 2. **Clone the Repository**
+### Prerequisites
+
+- Node.js >= 14.x
+- npm >= 6.x
+
+### Installation
+
+1. Clone the repository:
+
 ```bash
-git clone <repository_url>
-cd <project_directory>
+git clone https://github.com/your-username/peer-blockchain.git
+cd peer-blockchain
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the project locally:
+
+```bash
+npm start
+```
+
+This will start the React application at [http://localhost:3000](http://localhost:3000).
+
+### Environment Variables
+
+The project uses mock values for token addresses and reserves. If you want to integrate real contracts, you can configure the Web3Utils and CONTRACTS variables to point to actual blockchain networks and contracts.
+
+## Contributing
+
+1. Fork the repository
+2. Create a new branch for your feature
+3. Commit your changes
+4. Push to your fork
+5. Create a pull request
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgments
+
+- **Web3.js**: For interaction with the blockchain.
+- **Tailwind CSS**: For the efficient and responsive UI design.
+- **Lucide Icons**: For providing beautiful and customizable icons.
+
+--- 
+
+Feel free to modify and adapt the application as needed!
